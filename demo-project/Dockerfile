@@ -8,4 +8,6 @@ RUN pip install -r requirements.txt
 COPY ./app.py /app/app.py
 RUN chmod +x /app/app.py
 
+USER py
+
 CMD ["python", "/app/app.py"]
