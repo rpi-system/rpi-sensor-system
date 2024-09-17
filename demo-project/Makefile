@@ -27,4 +27,4 @@ logs:
 	docker logs -f $(CONTAINER_NAME)
 
 build:
-	docker build --no-cache -t $(IMAGE_NAME) -f $(DOCKERFILE) .
+	DOCKER_BUILDKIT=1 docker build --no-cache -t $(IMAGE_NAME) -f $(DOCKERFILE) .
