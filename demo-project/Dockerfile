@@ -1,5 +1,6 @@
 # temp stage
 FROM python:3.12.2-slim as builder
+LABEL org.opencontainers.image.source https://github.com/OWNER/REPO
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -19,10 +20,10 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 COPY ./app.py /src/app.py
 RUN chmod +x /src/app.py
 
-RUN addgroup --gid 1001 --system app && \
-    adduser --no-create-home --shell /bin/false --disabled-password --uid 1001 --system --group app
+# RUN addgroup --gid 1001 --system app && \
+#     adduser --no-create-home --shell /bin/false --disabled-password --uid 1001 --system --group app
 
-USER app
+# USER app
 
 # final stage
 FROM python:3.12.2-slim
@@ -32,6 +33,9 @@ WORKDIR /src
 COPY --from=builder /src/requirements.txt .
 COPY --from=builder /src/app.py .
 
-USER app
+# RUN addgroup --gid 1001 --system app && \
+#     adduser --no-create-home --shell /bin/false --disabled-password --uid 1001 --system --group app
+
+# USER app
 
 ENTRYPOINT ["python", "/src/app.py"]
