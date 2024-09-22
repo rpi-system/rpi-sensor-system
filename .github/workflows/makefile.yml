@@ -11,7 +11,7 @@ on: push
 
 jobs:
   build:
-    runs-on: [self-hosted, Linux, ARM64, pi-builder]
+    runs-on: self-hosted
     
     steps:
       - uses: actions/checkout@v4
