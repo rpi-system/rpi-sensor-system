@@ -47,7 +47,3 @@ secrets:
 volumes:
   influxdb2-data:
   influxdb2-config:
-
-
- # influxdb_data: 
- #   driver: local
