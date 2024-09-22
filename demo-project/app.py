@@ -22,7 +22,7 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
-## Test
+
 
 # # InfluxDB-Client initialisieren
 # client = InfluxDBClient(
