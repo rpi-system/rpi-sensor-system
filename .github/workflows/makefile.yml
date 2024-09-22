@@ -3,8 +3,12 @@ name: Makefile CI
 on:
   push:
     branches: [ $default-branch ]
+    paths:
+      - 'demo-project/**'   # Listen for changes in the 'src' directory
   pull_request:
     branches: [ $default-branch ]
+    paths:
+      - 'demo-project/**'   # Also listen for pull requests that change files in the 'src' directory
 
 jobs:
   build:
