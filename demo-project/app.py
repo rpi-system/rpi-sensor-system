@@ -11,7 +11,7 @@ INFLUXDB_BUCKET = "mydb"
 
 while True:
     logging.info("Hallo, Welt!")
-    time.sleep(1)  # Alle 30 Sekunden "Hallo, Welt!" loggen
+    time.sleep(1)
 
 # Logger konfigurieren
 logging.basicConfig(
