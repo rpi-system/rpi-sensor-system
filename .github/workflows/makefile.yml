@@ -13,9 +13,8 @@ jobs:
     runs-on: self-hosted 
     steps:
       - uses: actions/checkout@v4
-      - name: Set the directory
-        run: cd demo-project
       - name: Check Files in the directory
         run: ls -la
       - name: Build the Docker image
         run: sudo DOCKER_BUILDKIT=1 docker build --no-cache -t rpi-temperature -f Dockerfile .
+        working-directory: ./demo-project 
