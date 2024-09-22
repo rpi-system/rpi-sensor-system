@@ -28,3 +28,6 @@ logs:
 
 build:
 	DOCKER_BUILDKIT=1 docker build --no-cache -t $(IMAGE_NAME) -f $(DOCKERFILE) .
+
+cronjob: 
+	crontab -e */2 * * * * /usr/bin/python ./app.py

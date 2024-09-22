@@ -52,7 +52,8 @@ services:
     environment:
       - DATABASE_URL=''
     ports:
-      - "8000:8000"  # Expose port 8000 for the app (if needed for other services)
+      - "8000:8000"
+    network:   
 
 
   influxdb2:
