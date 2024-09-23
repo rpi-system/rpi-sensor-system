@@ -26,12 +26,10 @@
       scan:
         name: Scan
         permissions: read-all   
-        uses: rpi-system/rpi-workflow-templates/.github/workflows/reusable-trivy-scan-image.yaml@main
-          # bretfisher/github-actions-templates/.github/workflows/reusable-trivy-scan-image.yaml@main
-        
+        uses: rpi-system/rpi-workflow-templates/.github/workflows/reusable-trivy-scan-image.yaml@main  
         secrets:
           registry-username: ${{ github.actor }}
-          registry-password: ${{ secrets.GITHUB_TOKEN }}
+          registry-password: ${{ secrets.GITHUB_TOKEN }} # need to be defined? why is this working
         with:  
           image: 'ghcr.io/bretfisher/github-actions-templates:latest' 
           exit-code: 0

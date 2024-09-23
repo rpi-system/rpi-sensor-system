@@ -31,3 +31,6 @@ build:
 
 cronjob: 
 	crontab -e */2 * * * * /usr/bin/python ./app.py
+
+compose: 
+	docker compose up --build
