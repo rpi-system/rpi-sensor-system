@@ -1,5 +1,5 @@
 # temp stage
-FROM python:3.12.2-slim as builder
+FROM python:3.12.6-slim as builder
 LABEL org.opencontainers.image.source https://github.com/OWNER/REPO
 
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -26,7 +26,7 @@ RUN chmod +x /src/app.py
 # USER app
 
 # final stage
-FROM python:3.12.2-slim
+FROM python:3.12.6-slim
 
 WORKDIR /src
 
